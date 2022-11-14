@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "288702024524",
+    "project_id": "udemycommerce",
+    "storage_bucket": "udemycommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288702024524:android:40f55dd95e827cdf12dde9",
+        "android_client_info": {
+          "package_name": "com.example.udemyecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288702024524-rh08694doglhan8tt5ulm5klsed872nf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtEdWfbgMgcU8shcXCqX1-85lul7dPKQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288702024524-rh08694doglhan8tt5ulm5klsed872nf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "288702024524-9rtdni9r5nvl76fs1b6fvimj52b18o4f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.udemyecommerce"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
