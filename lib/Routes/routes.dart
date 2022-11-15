@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:udemyecommerce/Logic/Controllers/Binding/authbinding.dart';
+import 'package:udemyecommerce/Logic/Controllers/Binding/mainbinding.dart';
 import 'package:udemyecommerce/View/Screens/auth/forgot.dart';
 import 'package:udemyecommerce/View/Screens/auth/login.dart';
 import 'package:udemyecommerce/View/Screens/auth/signup.dart';
@@ -10,6 +11,7 @@ import '../View/Screens/welcome.dart';
 class AppRoutes {
   // initialRoute:
   static const welcome = Routes.welocmescreen;
+  static const mainscreen = Routes.mainscreen;
 
   //     getPages:
   static final routes = [
@@ -29,7 +31,7 @@ class AppRoutes {
     GetPage(
         name: Routes.mainscreen,
         page: (() => MainScreen()),
-        binding: Authbinding()),
+        bindings: [Authbinding(), Mainbinding()]),
   ];
 }
 

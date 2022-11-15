@@ -24,11 +24,11 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: context.theme.backgroundColor,
         appBar: AppBar(
-          backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+          backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
           elevation: 0,
         ),
-        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -47,7 +47,7 @@ class Login extends StatelessWidget {
                                 text: "LOG",
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
-                                color: Get.isDarkMode ? mainColor : pinkClr,
+                                color: Get.isDarkMode ? pinkClr : mainColor,
                                 underline: TextDecoration.none),
                             SizedBox(
                               width: 3,
@@ -57,8 +57,8 @@ class Login extends StatelessWidget {
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
                                 color: Get.isDarkMode
-                                    ? Colors.black
-                                    : Colors.white,
+                                    ? Colors.white
+                                    : Colors.black,
                                 underline: TextDecoration.none),
                           ],
                         ),
@@ -132,8 +132,8 @@ class Login extends StatelessWidget {
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                   color: Get.isDarkMode
-                                      ? Colors.black
-                                      : Colors.white,
+                                      ? Colors.white
+                                      : Colors.black,
                                   underline: TextDecoration.none),
                             )),
                         SizedBox(
@@ -158,7 +158,7 @@ class Login extends StatelessWidget {
                             text: "OR",
                             fontSize: 18,
                             fontWeight: FontWeight.normal,
-                            color: Get.isDarkMode ? Colors.black : Colors.white,
+                            color: Get.isDarkMode ? Colors.white : Colors.black,
                             underline: TextDecoration.none),
                         SizedBox(
                           height: 20,

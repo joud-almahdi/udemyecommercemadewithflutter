@@ -29,7 +29,7 @@ class Signup extends StatelessWidget {
           backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
           elevation: 0,
         ),
-        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+        backgroundColor: context.theme.backgroundColor,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -58,8 +58,8 @@ class Signup extends StatelessWidget {
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
                                 color: Get.isDarkMode
-                                    ? Colors.black
-                                    : Colors.white,
+                                    ? Colors.white
+                                    : Colors.black,
                                 underline: TextDecoration.none),
                           ],
                         ),

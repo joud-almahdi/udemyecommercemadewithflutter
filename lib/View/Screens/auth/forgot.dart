@@ -31,7 +31,7 @@ class ForgotPassword extends StatelessWidget {
               icon: Icon(Icons.arrow_back)),
           actions: [],
         ),
-        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+        backgroundColor: context.theme.backgroundColor,
         body: Form(
             key: Formkey,
             child: SingleChildScrollView(

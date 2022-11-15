@@ -1,8 +1,10 @@
 import 'dart:ffi';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:udemyecommerce/Routes/routes.dart';
 
@@ -12,6 +14,8 @@ class AuthController extends GetxController {
   var Displayname = '';
   var displayuserphoto = '';
   var googlesignin = GoogleSignIn();
+  var issignedin = false;
+  final GetStorage authbox = GetStorage();
 
   FirebaseAuth auth = FirebaseAuth.instance;
   void visibility() {
@@ -76,6 +80,8 @@ class AuthController extends GetxController {
           .then((value) {
         Displayname = auth.currentUser!.displayName!;
       });
+      issignedin = true;
+      authbox.write("auth", issignedin);
       update();
       Get.offNamed(Routes.mainscreen);
     } on FirebaseAuthException catch (e) {
@@ -114,6 +120,8 @@ class AuthController extends GetxController {
       final GoogleSignInAccount? googleUser = await googlesignin.signIn();
       Displayname = googleUser!.displayName!;
       displayuserphoto = googleUser.photoUrl!;
+      issignedin = true;
+      authbox.write("auth", issignedin);
       update();
       Get.offNamed(Routes.mainscreen);
     } catch (e) {
@@ -162,7 +170,24 @@ class AuthController extends GetxController {
     }
   }
 
-  void signoutfromapp() {}
+  void signoutfromapp() async {
+    try {
+      await auth.signOut();
+      await googlesignin.signOut();
+      Displayname = '';
+      displayuserphoto = '';
+      issignedin = false;
+      authbox.remove("auth");
+      update();
 
-  void facebooksignuppapp() {}
+      Get.offNamed(Routes.welocmescreen);
+    } catch (e) {
+      Get.snackbar('Error', e.toString(),
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white);
+    }
+  }
+
+  // void facebooksignuppapp() {}
 }
