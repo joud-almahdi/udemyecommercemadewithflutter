@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                         GetBuilder<AuthController>(builder: ((controller) {
                           return AuthTextFormField(
                             controller: passwordcontroller,
-                            obscureText: controller.isvisibility ? false : true,
+                            obscureText: controller.isvisibilty ? false : true,
                             validator: (value) {
                               if (value.toString().length < 6) {
                                 return "Password should be at least 6 characters";
@@ -110,7 +110,7 @@ class Login extends StatelessWidget {
                               onPressed: () {
                                 controller.visibility();
                               },
-                              icon: controller.isvisibility
+                              icon: controller.isvisibilty
                                   ? Icon(Icons.visibility_off)
                                   : Icon(
                                       Icons.visibility,
