@@ -29,7 +29,8 @@ class CardItems extends StatelessWidget {
               return buildcarditems(
                   image: controller.productlist[index].image,
                   price: controller.productlist[index].price,
-                  rate: controller.productlist[index].rating.rate);
+                  rate: controller.productlist[index].rating.rate,
+                  productId: controller.productlist[index].id);
             },
           ),
         );
@@ -41,6 +42,7 @@ class CardItems extends StatelessWidget {
     required String image,
     required double price,
     required double rate,
+    required int productId,
   }) {
     return Padding(
       padding: const EdgeInsets.all(5),
@@ -56,13 +58,23 @@ class CardItems extends StatelessWidget {
             ]),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.favorite_outline)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.add))
-              ],
+            Obx(
+              () => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        controller.manageFavourites(productId);
+                      },
+                      icon: controller.isFavourites(productId)
+                          ? Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            )
+                          : Icon(Icons.favorite_outline, color: Colors.black)),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.add))
+                ],
+              ),
             ),
             Container(
               width: double.infinity,
