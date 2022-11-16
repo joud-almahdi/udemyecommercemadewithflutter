@@ -59,8 +59,6 @@ class ProductController extends GetxController {
     return favouritesList.any((element) => element.id == productId);
   }
 
-//Search Bar Logic
-
   void addSearchToList(String searchName) {
     searchName = searchName.toLowerCase();
 
