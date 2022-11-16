@@ -5,6 +5,7 @@ import 'package:udemyecommerce/Logic/Controllers/Binding/product_binding.dart';
 import 'package:udemyecommerce/View/Screens/auth/forgot.dart';
 import 'package:udemyecommerce/View/Screens/auth/login.dart';
 import 'package:udemyecommerce/View/Screens/auth/signup.dart';
+import 'package:udemyecommerce/View/Screens/cartscreen.dart';
 import 'package:udemyecommerce/View/Screens/mainscreen.dart';
 
 import '../View/Screens/welcome.dart';
@@ -30,6 +31,14 @@ class AppRoutes {
         page: (() => ForgotPassword()),
         binding: Authbinding()),
     GetPage(
+      name: Routes.cartscreen,
+      page: (() => CartScreen()),
+      bindings: [
+        Authbinding(),
+        ProductBinding(),
+      ],
+    ),
+    GetPage(
         name: Routes.mainscreen,
         page: (() => MainScreen()),
         bindings: [Authbinding(), Mainbinding(), ProductBinding()]),
@@ -42,4 +51,5 @@ class Routes {
   static const SignupScreen = '/Signup';
   static const ForgotPassword = '/ForgotPassword';
   static const mainscreen = '/MainScreen';
+  static const cartscreen = '/CartScreen';
 }

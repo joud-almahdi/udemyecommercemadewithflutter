@@ -1,11 +1,15 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:udemyecommerce/Logic/Controllers/cartcontroller.dart';
 import 'package:udemyecommerce/Logic/Controllers/maincontroller.dart';
+import 'package:udemyecommerce/Routes/routes.dart';
 import 'package:udemyecommerce/Utils/theme.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
   final controllerr = Get.find<MainController>();
+  final cartcontrollerr = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,8 +23,20 @@ class MainScreen extends StatelessWidget {
             centerTitle: true,
             leading: Container(),
             actions: [
-              IconButton(
-                  onPressed: () {}, icon: Image.asset('assets/images/shop.png'))
+              Obx(() => Badge(
+                    position: BadgePosition.topEnd(top: 0, end: 3),
+                    animationDuration: Duration(milliseconds: 300),
+                    animationType: BadgeAnimationType.slide,
+                    badgeContent: Text(
+                      cartcontrollerr.quantity().toString(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    child: IconButton(
+                        onPressed: () {
+                          Get.toNamed(Routes.cartscreen);
+                        },
+                        icon: Image.asset('assets/images/shop.png')),
+                  ))
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
