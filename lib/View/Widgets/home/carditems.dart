@@ -5,6 +5,7 @@ import 'package:udemyecommerce/Logic/Controllers/cartcontroller.dart';
 import 'package:udemyecommerce/Logic/Controllers/product_controller.dart';
 import 'package:udemyecommerce/Model/productmodel.dart';
 import 'package:udemyecommerce/Utils/theme.dart';
+import 'package:udemyecommerce/View/Screens/productdetailsscreen.dart';
 import 'package:udemyecommerce/View/Widgets/text_util.dart';
 
 class CardItems extends StatelessWidget {
@@ -48,9 +49,9 @@ class CardItems extends StatelessWidget {
                           productId: controller.productlist[index].id,
                           productModels: controller.productlist[index],
                           onTap: () {
-                            // Get.to(() => ProductDetailsScreen(
-                            //       productModels: controller.productList[index],
-                            //     ));
+                            Get.to(() => Productdetails(
+                                  productmodel: controller.productlist[index],
+                                ));
                           });
                     } else {
                       return buildCardItems(
@@ -60,9 +61,9 @@ class CardItems extends StatelessWidget {
                           productId: controller.searchList[index].id,
                           productModels: controller.searchList[index],
                           onTap: () {
-                            // Get.to(() => ProductDetailsScreen(
-                            //       productModels: controller.searchList[index],
-                            //     ));
+                            Get.to(() => Productdetails(
+                                  productmodel: controller.searchList[index],
+                                ));
                           });
                     }
                   },
