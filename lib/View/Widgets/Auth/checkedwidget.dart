@@ -46,13 +46,13 @@ class CheckedWidget extends StatelessWidget {
                   text: "I accept ",
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
-                  color: Get.isDarkMode ? Colors.black : Colors.white,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
                   underline: TextDecoration.none),
               TextUtils(
                   text: "Terms & Conditions ",
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
-                  color: Get.isDarkMode ? Colors.black : Colors.white,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
                   underline: TextDecoration.underline)
             ],
           ),

@@ -13,7 +13,7 @@ class AuthButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-          backgroundColor: Get.isDarkMode ? mainColor : pinkClr,
+          backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
           minimumSize: const Size(360, 50)),
       child: TextUtils(
           text: text,

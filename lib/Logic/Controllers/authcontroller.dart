@@ -210,7 +210,7 @@ class AuthController extends GetxController {
 
       displayUserName.value = '';
       displayuserphoto.value = '';
-      //displayUserEmail.value = '';
+      displayUserEmail.value = '';
       isSignedIn = false;
       authBox.remove("auth");
       update();
