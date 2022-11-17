@@ -7,7 +7,9 @@ import 'package:get_storage/get_storage.dart';
 import 'package:udemyecommerce/Logic/Controllers/themecontroller.dart';
 import 'package:udemyecommerce/Routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:udemyecommerce/Utils/my_string.dart';
 import 'package:udemyecommerce/Utils/theme.dart';
+import 'package:udemyecommerce/language/localization.dart';
 import 'Logic/Controllers/maincontroller.dart';
 import 'firebase_options.dart';
 
@@ -26,6 +28,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      locale: Locale(ene),
+      fallbackLocale: Locale(ene),
+      translations: LocaliztionApp(),
       theme: ThemesApp.light,
       darkTheme: ThemesApp.dark,
       themeMode: ThemeController().themeDataGet,
